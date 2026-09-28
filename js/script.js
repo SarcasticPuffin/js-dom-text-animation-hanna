@@ -1,8 +1,10 @@
+"use strict";
 // Husk fra dag 2: skriv "use strict" herunder
 
 
 // Eksempel: vi henter ordet "word" ved hjælp af dets id-attribut
 const getWordElem = document.getElementById("word");
+const getZoomBtn = document.getElementById("zoomBtn");
 
 // Skriv selv: hent knappen "zoomBtn" på samme måde, ved hjælp af dens id. Variablen skal hedde getZoomBtn
 
@@ -10,6 +12,13 @@ const getWordElem = document.getElementById("word");
 // Eksempel: vi lytter efter klik på knappen og kører en anonym function, når der klikkes - ligesom i billedskift-opgaven
 getZoomBtn.addEventListener("click", function() {
 
+      if (this.textContent === `Zoom ind`){
+        getWordElem.style.fontSize = `6rem`;
+        this.textContent = `Zoom ud`;
+    } else {
+        getWordElem.style.fontSize = `3rem`;
+        this.textContent = `Zoom ind`;
+    }
     // Skriv if/else-strukturen selv herinde, ligesom i billedskift-opgaven.
     //
     // Nyt i dag: getWordElem.style.fontSize ændrer en CSS-egenskab (fontSize) direkte via JavaScript,
